@@ -254,7 +254,7 @@ public class WritingMethods {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(AutoTyper.class.getName()).log(Level.SEVERE, null, ex);
+                    
                     }
                 }
             }
@@ -300,7 +300,7 @@ public class WritingMethods {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(AutoTyper.class.getName()).log(Level.SEVERE, null, ex);
+                      
                     }
                 }
             }

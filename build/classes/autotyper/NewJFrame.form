@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -34,6 +34,9 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jButton1.setFocusable(false);&#xa;jButton2.setFocusable(false);&#xa;this.setResizable(false);&#xa;try {&#xa;UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());&#xa;} catch (Exception ex) {&#xa;                    Logger.getLogger(NewJFrame.class&#xa;&#xa;.getName()).log(Level.SEVERE, null, ex);&#xa;                }"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">

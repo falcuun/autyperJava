@@ -21,14 +21,7 @@ public class NewJFrame extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     public NewJFrame() {
-
         initComponents();
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception ex) {
-            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
     }
 
     /**
@@ -102,6 +95,17 @@ public class NewJFrame extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jButton1.setFocusable(false);
+        jButton2.setFocusable(false);
+        this.setResizable(false);
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ex) {
+            Logger.getLogger(NewJFrame.class
+
+                .getName()).log(Level.SEVERE, null, ex);
+        }
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -131,8 +135,10 @@ public class NewJFrame extends javax.swing.JFrame {
  /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
+                new NewJFrame().setResizable(false);
                 new NewJFrame().setVisible(true);
-
+                
             }
         });
     }
