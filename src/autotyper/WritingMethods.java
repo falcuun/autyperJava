@@ -27,10 +27,9 @@ public class WritingMethods {
                     } catch (InterruptedException ex) {
 
                     }
-
                     for (int i = 0; i < sentence.length; i++) {
                         try {
-                            Thread.sleep(1);
+                            Thread.sleep(10);
                         } catch (InterruptedException ex) {
                             Logger.getLogger(WritingMethods.class.getName()).log(Level.SEVERE, null, ex);
                         }
