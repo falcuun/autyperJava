@@ -111,8 +111,10 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         WritingMethods.working = true;
+        jButton1.setFocusable(false);
         try {
-            wm.robotSwitch(jTextField1.getText());
+            wm.robotSwitch(jTextField1.getText().toCharArray());
+
         } catch (AWTException ex) {
             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -120,6 +122,8 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         WritingMethods.working = false;
+        jButton1.setFocusable(true);
+        //System.out.println(jTextField1.getText().toCharArray());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -135,10 +139,10 @@ public class NewJFrame extends javax.swing.JFrame {
  /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
                 new NewJFrame().setResizable(false);
                 new NewJFrame().setVisible(true);
-                
+
             }
         });
     }

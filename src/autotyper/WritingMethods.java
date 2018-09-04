@@ -16,14 +16,25 @@ public class WritingMethods {
 
     public static boolean working = false;
 
-    public void robotSwitch(String sentence) throws AWTException {
+    public void robotSwitch(char[] sentence) throws AWTException {
         Robot robot = new Robot();
         Thread t = new Thread() {
             @Override
             public void run() {
                 while (working) {
-                    for (char c : sentence.toCharArray()) {
-                        switch (c) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+
+                    }
+
+                    for (int i = 0; i < sentence.length; i++) {
+                        try {
+                            Thread.sleep(1);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(WritingMethods.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        switch (sentence[i]) {
                             case 'a':
                                 robot.keyPress(KeyEvent.VK_A);
                                 break;
@@ -244,23 +255,23 @@ public class WritingMethods {
                             case '/':
                                 robot.keyPress(KeyEvent.VK_SLASH);
                                 break;
-                            case '\'': 
+                            case '\'':
                                 robot.keyPress(KeyEvent.VK_QUOTE);
+                                break;
+                            case ':':
+                                robot.keyPress(KeyEvent.VK_COLON);
                                 break;
                         }
                     }
                     robot.keyPress(KeyEvent.VK_ENTER);
                     robot.keyRelease(KeyEvent.VK_ENTER);
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException ex) {
-                    
-                    }
+
                 }
             }
         };
-
-        t.start();
+        if (!t.isAlive()) {
+            t.start();
+        }
     }
 
     public void robotHardcoded() throws AWTException {
@@ -300,7 +311,7 @@ public class WritingMethods {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
-                      
+
                     }
                 }
             }
@@ -316,6 +327,11 @@ public class WritingMethods {
             @Override
             public void run() {
                 while (working) {
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(WritingMethods.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     for (char c : charArray) {
                         int code = KeyEvent.getExtendedKeyCodeForChar(c);
                         switch (c) {
@@ -353,11 +369,7 @@ public class WritingMethods {
 
                     }
                     robot.keyPress(KeyEvent.VK_ENTER);
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException ex) {
-                        Logger.getLogger(WritingMethods.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+
                 }
             }
         };
